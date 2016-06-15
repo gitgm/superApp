@@ -6,30 +6,15 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services', 'app.directives'])
-
-.controller('AppCtrl', function($scope, TwittSrv){
+.config(function($stateProvider, $urlRouterProvider){
   'use strict';
-  TwittSrv.getTwitts().then(function(twitts){
-    $scope.twitts = twitts;
+  $stateProvider
+  .state('app', {
+    url: '/app',
+    templateUrl: 'views/app.html',
+    controller: 'AppCtrl'
   });
-
-  $scope.doRefresh = function(){
-    TwittSrv.getNewTwitts().then(function(newTwitts){
-      $scope.twitts = newTwitts.concat($scope.twitts);
-    }).finally(function() {
-      // Stop the ion-refresher from spinning
-      $scope.$broadcast('scroll.refreshComplete');
-    });
-  };
-
-  $scope.loadMore = function(){
-    TwittSrv.getMoreTwitts().then(function(olderTwitts){
-      $scope.twitts = $scope.twitts.concat(olderTwitts);
-    }).finally(function() {
-      // Stop the ion-infinite-scroll from spinning
-      $scope.$broadcast('scroll.infiniteScrollComplete');
-    });
-  };
+  $urlRouterProvider.otherwise('/app');
 })
 
 .run(function($ionicPlatform) {
