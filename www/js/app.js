@@ -6,16 +6,8 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services', 'app.directives'])
-.config(function($stateProvider, $urlRouterProvider){
-  'use strict';
-  $stateProvider
-  .state('app', {
-    url: '/app',
-    templateUrl: 'views/app.html',
-    controller: 'AppCtrl'
-  });
-  $urlRouterProvider.otherwise('/app');
-})
+
+
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
