@@ -4,7 +4,7 @@ angular.module('app.controllers', [])
 
 })
    
-.controller('catGorieCtrl', function($scope) {
+.controller('categorieCtrl', function($scope) {
 
 })
    

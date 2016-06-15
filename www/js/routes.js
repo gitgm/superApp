@@ -20,12 +20,12 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('menu.catGorie', {
+  .state('menu.categorie', {
     url: '/page2',
     views: {
       'side-menu21': {
-        templateUrl: 'templates/catGorie.html',
-        controller: 'catGorieCtrl'
+        templateUrl: 'templates/categorie.html',
+        controller: 'categorieCtrl'
       }
     }
   })

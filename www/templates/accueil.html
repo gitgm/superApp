@@ -11,5 +11,17 @@
                 <input type="search" placeholder="Rechercher...">
             </label>
         </form>
+
+<ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()"></ion-refresher>
+    <div class="list">
+      <a class="item item-avatar" href="#" ng-repeat="twitt in twitts">
+        <img ng-src="{{twitt.user.avatar}}">
+        <h2>{{twitt.user.name}}</h2>
+        <p>{{twitt.content}}</p>
+      </a>
+    </div>
+    <ion-infinite-scroll on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
+
+        
     </ion-content>
 </ion-view>
