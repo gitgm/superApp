@@ -1,4 +1,32 @@
 /* Empty. Add your own CSS if you like */
+@font-face {
+    font-family: "lato";
+    src: url(..fonts/Lato-Regular.ttf);
+}
+body,html{
+
+  font-family: "lato";
+}
+#accueil-button1{
+
+  font-family: "lato";
+  font-size: 1em;
+}
+#accueil-button2{
+
+  font-family: "lato";
+  font-size: 1em;
+}
+#accueil-button3{
+
+  font-family: "lato";
+  font-size: 1em;
+}
+
+.bar {
+
+  height: 55px !important
+}
 section.chats div {
   max-width: 255px;
   word-wrap: break-word;

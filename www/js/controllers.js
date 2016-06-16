@@ -1,6 +1,8 @@
 angular.module('app.controllers', [])
   
+ 
 .controller('accueilCtrl', function($scope) {
+
 
 })
    
@@ -21,6 +23,8 @@ console.log('test');
   TwittSrv.getTwitts().then(function(twitts){
     $scope.twitts = twitts;
   });
+
+
 
   $scope.doRefresh = function(){
     TwittSrv.getNewTwitts().then(function(newTwitts){

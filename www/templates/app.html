@@ -1,25 +1,44 @@
-<ion-view title="Accueil" id="page1" class=" ">
+<ion-view>
+<ion-nav-title>
+      <img src="images/logo.png" style="height:35px;margin-top:10px;margin-bottom:10px;">
+    </ion-nav-title>
+
     <ion-content padding="true" class="has-header">
         <div id="accueil-button-bar1" class=" button-bar ">
-            <button id="accueil-button1" class=" button button-stable button-small button-block ">Aujourd'hui</button>
-            <button id="accueil-button2" class=" button button-stable button-small button-block ">Likes</button>
-            <button id="accueil-button3" class=" button button-stable button-small button-block ">Contact</button>
+            <button id="accueil-button1" class=" button button-light button-small button-block ">Aujourd'hui</button>
+            <button id="accueil-button2" class=" button button-light button-small button-block ">Likes</button>
+            <button id="accueil-button3" class=" button button-light button-small button-block ">Contact</button>
         </div>
-        <form id="accueil-form2" class="list ">
+        <!--form id="accueil-form2" class="list ">
             <label class="item item-input">
                 <i class="icon ion-search placeholder-icon"></i>
                 <input type="search" placeholder="Rechercher...">
             </label>
-        </form>
+        </form-->
 
 <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()"></ion-refresher>
-    <div class="list">
-      <a class="item item-avatar" href="#" ng-repeat="twitt in twitts">
-        <img ng-src="{{twitt.user.avatar}}">
-        <h2>{{twitt.user.name}}</h2>
-        <p>{{twitt.content}}</p>
-      </a>
-    </div>
+    
+ <div class="list card" ng-repeat="twitt in twitts">
+
+  <div class="item item-avatar">
+    <img ng-src="{{twitt.user.avatar}}">
+    <h2>{{twitt.user.name}}</h2>
+  </div>
+
+  <div class="item item-body">
+    <p>
+      {{twitt.content}}
+    </p>
+    <p>
+      <a href="#" class="subdued"><img src="images/repost.png"style="height:16px;margin-right:5%;"></a>
+      <a href="#" class="subdued"><img src="images/like.png"style="height:16px;margin-right:5%;"></a>
+      <a href="#" class="subdued"><img src="images/talk.png"style="height:16px;"></a>
+    </p>
+  </div>
+
+</div>
+
+ 
     <ion-infinite-scroll on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
 
 

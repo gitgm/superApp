@@ -1,22 +1,23 @@
 <ion-side-menus enable-menu-with-back-views="false">
     <ion-side-menu-content>
-        <ion-nav-bar class="bar-positive">
+        <ion-nav-bar class="bar-stable">
             <ion-nav-back-button></ion-nav-back-button>
             <ion-nav-buttons side="left">
-                <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+                <a menu-toggle="left"><img src="images/burger-icon.png"style="height:20px;margin-top:50%;margin-left:30%;"></a>
+            </ion-nav-buttons>
+            <ion-nav-buttons side="right">
+                <a menu-toggle="right"><img src="images/search.png"style="height:30px;margin-top:25%;margin-right:30%;"></a>
             </ion-nav-buttons>
         </ion-nav-bar>
         <ion-nav-view name="side-menu21"></ion-nav-view>
     </ion-side-menu-content>
     <ion-side-menu side="left" id="side-menu21">
-        <ion-header-bar class="bar-stable">
-            <div class="title">Menu</div>
-        </ion-header-bar>
+
         <ion-content padding="false" class="side-menu-left has-header">
-            <ion-list id="menu-null" class=" ">
-                <ion-item id="menu-list-item1" ui-sref="menu.app" menu-close="" class="  ">Accueil</ion-item>
-                <ion-item id="menu-list-item2" ui-sref="menu.categorie" menu-close="" class="  ">Catégories</ion-item>
-                <ion-item id="menu-list-item3" ui-sref="menu.tab.chats" menu-close="" class="  ">Conversation</ion-item>
+            <ion-list id="menu-null" class="button-clear">
+                <ion-item id="menu-list-item1" ui-sref="menu.app" menu-close="" class=" button-clear "style="text-align: center;">Accueil</ion-item>
+                <ion-item id="menu-list-item2" ui-sref="menu.categorie" menu-close="" class=" button-clear "style="text-align: center;">Catégories</ion-item>
+                <ion-item id="menu-list-item3" ui-sref="menu.tab.chats" menu-close="" class=" button-clear "style="text-align: center;">Conversation</ion-item>
             </ion-list>
         </ion-content>
     </ion-side-menu>
