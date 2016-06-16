@@ -8,7 +8,14 @@ angular.module('app.routes', [])
   // Each state's controller can be found in controllers.js
   $stateProvider
 
-      .state('menu.app', {
+
+  .state('menu', {
+    url: '/side-menu21',
+    templateUrl: 'templates/menu.html',
+    abstract:true
+  })
+
+  .state('menu.app', {
     url: '/page1',
     views: {
       'side-menu21': {
@@ -28,21 +35,15 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('menu.conversations', {
-    url: '/page3',
-    views: {
-      'side-menu21': {
-        templateUrl: 'templates/conversations.html',
-        controller: 'conversationsCtrl'
-      }
-    }
-  })
-
-  .state('menu', {
-    url: '/side-menu21',
-    templateUrl: 'templates/menu.html',
-    abstract:true
-  })
+//  .state('menu.conversations', {
+//    url: '/page3',
+//    views: {
+//      'side-menu21': {
+//        templateUrl: 'templates/index.html',
+//        controller: 'ChatCtrl'
+//      }
+//    }
+//  })
 
   .state('menu.pageTheme', {
     url: '/page4',
@@ -53,6 +54,91 @@ angular.module('app.routes', [])
       }
     }
   })
+
+
+  .state('menu.tab', {
+    url: '/tab',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/templates-chat/tabs.html',
+      }
+    }
+  })
+
+
+
+  .state('menu.tab.chats', {
+    url: '/chats/{username}',
+    params: { username: { value: null } },
+    views: {
+      'tab-chats': {
+        templateUrl: 'templates/templates-chat/tab-chats.html',
+        controller: 'ChatCtrl'
+      }
+    }
+  })
+
+  .state('menu.tab.users', {
+      url: '/users',
+      views: {
+        'tab-users': {
+          templateUrl: 'templates/templates-chat/tab-users.html',
+        }
+      }
+    })
+
+  .state('menu.tab.account', {
+    url: '/account',
+    views: {
+      'tab-account': {
+        templateUrl: 'templates/templates-chat/tab-account.html',
+        controller: 'AccountCtrl'
+      }
+    }
+  });
+
+
+
+
+  //routes du app-chat
+
+//  .state('tab', {
+//    url: '/tab',
+//    abstract: true,
+//    templateUrl: 'templates/templates-chat/tabs.html'
+//  })
+
+  // Each tab has its own nav history stack:
+
+//  .state('tab.chats', {
+//    url: '/chats/{username}',
+//    params: { username: { value: null } },
+//    views: {
+//      'tab-chats': {
+//        templateUrl: 'templates/templates-chat/tab-chats.html',
+//        controller: 'ChatCtrl'
+//      }
+//    }
+//  })
+//
+//  .state('tab.users', {
+//      url: '/users',
+//      views: {
+//        'tab-users': {
+//          templateUrl: 'templates/templates-chat/tab-users.html',
+//        }
+//      }
+//    })
+//
+//  .state('tab.account', {
+//    url: '/account',
+//    views: {
+//      'tab-account': {
+//        templateUrl: 'templates/templates-chat/tab-account.html',
+//        controller: 'AccountCtrl'
+//      }
+//    }
+//  });
 
 $urlRouterProvider.otherwise('/side-menu21/page1')
 
